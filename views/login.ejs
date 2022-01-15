@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="inner-box" id="card">
+                <div class="card-front">
+                    <h2>LOGIN</h2>
+                    <form action="/login" id="login-form" method="post">
+                        <div class="input-control">
+                            <input type="text" name="userid" id="in-userid" class="input-box" placeholder="USER ID">
+                        <div class="error"></div>
+                        </div>
+                        <div class="input-control">
+                            <input type="password" name="passwd" id="in-passwd" class="input-box" placeholder="PASSWORD">
+                        <div class="error"></div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" onclick="return validateLoginInputs()">Login</button>
+                    </form>
+                    <button type="button" class="btn" onclick="openRegister()">I'm new here</button>
+                </div>
+                <div class="card-back">
+                    <h2>REGISTER</h2>
+                    <form action="/register" id="reg-form" method="post">
+                        <div class="input-control">
+                            <input type="text" name="name" id="reg-name" class="input-box" placeholder="NAME">
+                            <div class="error"></div>
+                        </div>
+                        <div class="input-control">
+                            <input type="text" name="userid" id="reg-userid" class="input-box" placeholder="USER ID">
+                            <div class="error"></div>
+                        </div>
+                        <div class="input-control">
+                            <input type="password" name="passwd" id="reg-passwd" class="input-box" placeholder="PASSWORD">
+                            <div class="error"></div>
+                        </div>
+                        <div class="input-control">
+                            <input type="password" name="cnf-passwd" id="reg-cnf-passwd" class="input-box" placeholder="CONFIRM PASSWORD">
+                            <div class="error"></div>
+                        </div>
+                        <button type="submit" class="submit-btn" onclick="return validateRegInputs()">Register</button>
+                    </form>
+                    <button type="button" class="btn" onclick="openLogin()">I've an account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var card = document.getElementById("card");
+        function openRegister(){
+            card.style.transform = "rotateY(-180deg)"
+        }
+        function openLogin(){
+            card.style.transform = "rotateY(0deg)"
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

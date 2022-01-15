@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall feed</title>
+    <link rel="stylesheet" href="wallStyle.css">
+
+</head>
+<body>
+
+    
+    <% for(let i=images.length; i>=1; i-=1) {%>
+        <% source = "uploads/"+images[i-1].name %> 
+    <center><img src="<%= source %>" width="550px" alt=""></center <br>
+    <% } %>
+
+    
+    <div class="btnn">
+        <a href="#modalbox">+</a>
+    </div>
+
+    <div id="modalbox" class="modal">
+            <!-- <form action="#" method="#post">
+                <input type="file">
+                <input type="text" placeholder="caption">
+                <button type="submit">Post</button>
+            </form> -->
+            <div class="container">
+                <div class="card">
+                    <div class="inner-box" id="card">
+                        <div class="card-front">
+                            <h2>POST</h2>
+                            <form action="/upload" id="login-form" method="post" enctype="multipart/form-data">
+                                <div class="input-control">
+                                    <input type="file" name="img" id="upload-asset" class="input-box upload-box">
+                                    <div class="error"></div>
+                                </div>
+                                <input type="text" name="caption" id="caption" class="input-box" placeholder="CAPTIONS">
+                                <button type="submit" class="submit-btn" onclick="return validatePost()">Post</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="" class="modal-close">&times;</a>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
