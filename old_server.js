@@ -92,11 +92,17 @@ app.post("/login", (req, res)=>{
                 if(foundUser.password===passwd){
                     res.redirect("/upload");
                 }
-                else console.log("Wrong Password!!");
+                else {
+                    console.log("Wrong Password!!");
+                    res.send("Wrong Password");
+                }
             }
             else console.log("User does not exist");
         }
-        else console.log(err);
+        else {
+            console.log(err);
+            res.send("No user found");
+        }
     })
 });
 
